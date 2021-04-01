@@ -1,8 +1,15 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 
 const Book = ({book}) => {
     console.log(book);
+     
+    const history = useHistory()
+    const handleBook = (orderBook) => {
+        history.push(`/checkout/${orderBook}`);
+    }
+
     return (
         <div className='col-md-4'>
            
@@ -12,7 +19,7 @@ const Book = ({book}) => {
                 <Card.Body>
                     <Card.Title>{book.name}</Card.Title>
                         <p>${book.price}</p>
-                    <Button variant="primary">Buy Now</Button>
+                    <Button onClick={() => handleBook(book._id)} variant="primary">Buy Now</Button>
                 </Card.Body>
              </Card>
             
