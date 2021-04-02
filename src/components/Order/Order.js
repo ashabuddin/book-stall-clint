@@ -1,10 +1,20 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import OrderDetail from '../OrderDetail/OrderDetail';
 
 const Order = () => {
+     const [order, setOrder] = useState([])
+     useEffect(() => {
+         fetch('http://localhost:5000/order')
+         .then(res => res.json())
+         .then(data => setOrder(data))
+     },[] )
+
     return (
-        <div>
-            <h1>This is order</h1>
+        <div className='row'>
+            {
+                order.map(order =><OrderDetail order={order}></OrderDetail> )
+            }
         </div>
     );
 };

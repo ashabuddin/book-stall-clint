@@ -14,6 +14,7 @@ const Admin = () => {
           name: data.name,
           price: data.price,
           imageURL: imageURL,
+          
       }
         const url = `http://localhost:5000/addBook`;
       

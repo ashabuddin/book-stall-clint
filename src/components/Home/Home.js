@@ -9,7 +9,7 @@ const Home = () => {
           fetch('http://localhost:5000/books')
           .then(res => res.json())
           .then(data => setBooks(data))
-      }, [])  
+      }, []) 
 
     return (
         <div className='row'>
