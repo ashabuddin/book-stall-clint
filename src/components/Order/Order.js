@@ -5,7 +5,7 @@ import OrderDetail from '../OrderDetail/OrderDetail';
 const Order = () => {
      const [order, setOrder] = useState([])
      useEffect(() => {
-         fetch('http://localhost:5000/order')
+         fetch('https://blooming-tor-37064.herokuapp.com/order')
          .then(res => res.json())
          .then(data => setOrder(data))
      },[] )

@@ -1,16 +1,19 @@
 
 
-import React, {  useEffect, useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
+import React, {  useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { UserContext } from '../../App';
 
 
 
 const Checkout = () => {
     const {orderBook} = useParams();
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     
     const [book, setBook] = useState({});
     useEffect(() => {
-       fetch(`http://localhost:5000/book/${orderBook}`  )
+       fetch(`https://blooming-tor-37064.herokuapp.com/${orderBook}`  )
       .then(res => res.json())
       .then(data =>setBook(data))  
     },[orderBook])
@@ -22,6 +25,7 @@ const Checkout = () => {
     const handleCheckOut = () =>{
         const newOrder = {
             ...book, 
+            
             orderTime: new Date(),
             
          };
@@ -43,7 +47,8 @@ const Checkout = () => {
             <p>price: {book.price}</p>
 
           <button onClick={handleCheckOut} >Check Out </button>
-            
+          
+                            
         </div>
     );
 };
