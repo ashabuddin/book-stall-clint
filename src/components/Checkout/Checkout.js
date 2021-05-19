@@ -29,7 +29,7 @@ const Checkout = () => {
             orderTime: new Date(),
             
          };
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://blooming-tor-37064.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newOrder)

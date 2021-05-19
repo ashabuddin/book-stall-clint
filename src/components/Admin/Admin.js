@@ -16,7 +16,7 @@ const Admin = () => {
           imageURL: imageURL,
           
       }
-        const url = `http://localhost:5000/addBook`;
+        const url = `https://blooming-tor-37064.herokuapp.com/addBook`;
       
         fetch(url, {
             method: 'POST',
