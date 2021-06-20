@@ -14,6 +14,8 @@ import Header from './components/Header/Header';
 import Checkout from './components/Checkout/Checkout';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Order from './components/Order/Order';
+import Delate from './components/Delate/Delate';
+import Sidebar from './components/Sidebar/Sidebar';
 
 export const UserContext = createContext();
 
@@ -41,8 +43,14 @@ function App() {
               <Route path="/login">
                 <Login></Login>
               </Route>
-              <PrivateRoute path="/checkout/:orderBook">
+              <PrivateRoute path="/checkout/:_id">
                   <Checkout />
+              </PrivateRoute>
+              <PrivateRoute path='/delate'>
+                 <Delate/>
+              </PrivateRoute>
+              <PrivateRoute path='/sidebar'>
+                <Sidebar/>
               </PrivateRoute>
             </Switch>
           </div>

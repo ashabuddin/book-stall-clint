@@ -8,17 +8,17 @@ import { UserContext } from '../../App';
 
 
 const Checkout = () => {
-    const {orderBook} = useParams();
+    const {_id} = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     
     const [book, setBook] = useState({});
     useEffect(() => {
-       fetch(`https://blooming-tor-37064.herokuapp.com/${orderBook}`  )
+       fetch(`https://blooming-tor-37064.herokuapp.com/book/${_id}`  )
       .then(res => res.json())
       .then(data =>setBook(data))  
-    },[orderBook])
+    },[_id])
 
-  
+    console.log(_id);
 
    
 
@@ -39,7 +39,7 @@ const Checkout = () => {
             console.log(data);
         })
     }
-
+        console.log(book.name);
    
     return (
         <div>

@@ -6,8 +6,8 @@ const Book = ({book}) => {
     console.log(book);
      
     const history = useHistory()
-    const handleBook = (orderBook) => {
-        history.push(`/checkout/${orderBook}`);
+    const handleBook = (_id) => {
+        history.push(`/checkout/${_id}`);
     }
 
     return (
