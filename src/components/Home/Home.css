@@ -1,0 +1,8 @@
+.book-card {
+    padding: 20px;
+    margin: auto;
+    float: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    box-shadow: 5px 5px 10px lightgrey;
+  }
